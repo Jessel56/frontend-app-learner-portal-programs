@@ -3,10 +3,13 @@
 .hero {
   position: relative;
   overflow: hidden;
+  background-color: var(--wood-dark);
+  border-bottom: 1px solid var(--accent);
 
   h1 {
-    font-family: 'Inter';
+    font-family: 'Cormorant Garamond', serif !important;
     font-weight: 700;
+    color: var(--paper) !important;
   }
 
   .container {
@@ -23,10 +26,11 @@
     position: absolute;
     width: 100%;
     height: 100%;
+    opacity: 0.1;
 
     .hero-texture,
     .hero-img {
-      background-color: #ffffff;
+      background-color: transparent;
       background-size: cover;
       background-repeat: no-repeat;
       background-position: center;
@@ -38,6 +42,7 @@
       flex-basis: 33.33%;
       border-right-width: 20px;
       border-right-style: solid;
+      border-right-color: var(--accent);
     }
 
     .hero-img {
@@ -48,6 +53,7 @@
   .hero-box {
     border-left-width: 20px;
     border-left-style: solid;
+    border-left-color: var(--accent);
   }
 
   .hero-logo-wrapper {
@@ -60,6 +66,7 @@
     .hero-logo {
       border-left-width: 20px;
       border-left-style: solid;
+      border-left-color: var(--accent);
 
       img {
         max-width: 130px;

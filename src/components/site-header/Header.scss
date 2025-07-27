@@ -49,10 +49,15 @@ $white: #fff;
 
 
 .site-header-desktop {
-  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
-  background: $white;
+  box-shadow: 0 1px 0 0 var(--accent);
+  background: var(--wood-dark);
   .nav-link {
     text-decoration: none;
+    color: var(--paper) !important;
+
+    &:hover, &:focus, &:active {
+      color: var(--brass) !important;
+    }
   }
   .logo {
     display: block;
@@ -78,13 +83,14 @@ $white: #fff;
     .nav-link:focus,
     .nav-link.active,
     .expanded .nav-link {
-      background: $component-active-bg;
-      color: $component-active-color;
+      background: var(--wood-bg);
+      color: var(--brass);
     }
     .menu {
       position: static;
       .menu-content {
-        border-top: solid 2px $component-active-bg;
+        background: var(--wood-dark);
+        border-top: solid 2px var(--accent);
         left: 0;
         right: 0;
         box-shadow: 0 1px 2px rgba(0,0,0,.25);
@@ -96,5 +102,8 @@ $white: #fff;
   }
   .search-input {
     border-radius: $rounded-pill;
+    background-color: var(--paper) !important;
+    color: var(--ink) !important;
+    border-color: var(--accent) !important;
   }
 }

@@ -2,75 +2,34 @@
 @import "@openedx/paragon/scss/core/core";
 @import "@edx/brand/paragon/overrides";
 
-.course {
-  @extend .position-relative;
+.course-card {
+  .card {
+    background-color: var(--paper) !important; // Paper background for course cards
+    border: 1px solid var(--accent) !important; // Wood accent border
+    box-shadow: var(--shadow) !important; // Subtle wood shadow
+    color: var(--ink) !important; // Dark ink text on paper
 
-  &:first-child {
-    @extend .pt-3;
-  }
-
-  &:last-child {
-    @extend .border-0;
-    @extend .mb-0;
-  }
-
-  &.is-micromasters {
-    min-height: 170px;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background-image: url('../images/mm-badge.svg');
-      background-position: right center;
-      background-repeat: no-repeat;
-      opacity: 0.05;
-      z-index: 0;
-    }
-
-    @include media-breakpoint-down(sm) {
-      &::before {
-        background-position: right bottom;
+    .pgn__card-header {
+      // Assuming the title is an h3 or has a class like .pgn__card-title within the header
+      // Adjust selector if needed based on actual rendered HTML structure from Paragon
+      h1, h2, h3, h4, h5, h6, .pgn__card-title {
+        font-family: 'Cormorant Garamond', serif !important; // Elegant serif for card titles
+        font-weight: 600 !important;
+        color: var(--ink) !important;
       }
     }
-  }
+    .pgn__card-footer {
+      background-color: var(--wood-dark) !important; // Dark wood footer
+      color: var(--paper) !important;
 
-  .course-title > a {
-    @extend .h4;
-    @extend .m-0;
-    @extend .text-dark;
-    text-decoration: none;
-  }
-
-  .notifications {
-    li:last-child {
-      .notification { 
-        @extend .mb-0;
+      .list-inline-item {
+        color: var(--paper) !important;
       }
     }
-
-    .notification {
-      background: #f4f7ff;
-      border-color: #d3daf0;
-    }
-  }
-
-  .btn-outline-primary {
-    background-color: $white;
-  }
-
-  @include media-breakpoint-down(xs) {
-    .btn-xs-block {
-      width: 100%;
-    }
-  }
-
-  .course-misc-text {
-    small { 
-      display: block;
+    .pgn__card-body {
+        background-color: var(--wood-dark) !important;
+        color: var(--paper) !important;
+        border: 1px solid var(--accent) !important;
     }
   }
 }

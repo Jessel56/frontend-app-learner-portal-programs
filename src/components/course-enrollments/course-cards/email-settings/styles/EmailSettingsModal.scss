@@ -3,19 +3,23 @@
 @import "@edx/brand/paragon/overrides";
 
 .modal {
+  .modal-content {
+    background-color: var(--paper) !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--accent) !important;
+    box-shadow: var(--shadow) !important;
+  }
   .modal-title {
     font-size: 1.5rem;
     line-height: 1.5;
-  }
-
-  .save-email-settings-btn {
-    &:not(.is-form-changed):disabled {
-      @extend .btn-light;
-    }
+    font-family: 'Cormorant Garamond', serif !important;
+    color: var(--ink) !important;
   }
 
   .modal-header {
+    border-bottom-color: var(--accent) !important;
     .js-close-modal-on-click {
+      color: var(--ink) !important;
       &:focus, &:active {
         outline: 5px auto -webkit-focus-ring-color;
       }
@@ -23,19 +27,6 @@
   }
 
   .modal-footer {
-    .js-close-modal-on-click {
-      @extend .btn-link;
-      @extend .border-0;
-      background: $white;
-
-      &::before {
-        @extend .d-none;
-      }
-
-      &.btn-secondary:active {
-        @extend .btn-link;
-        background: $white;
-      }
-    }
+    border-top-color: var(--accent) !important;
   }
 }
