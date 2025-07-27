@@ -4,8 +4,25 @@
 
 .collapsible-trigger {
   @extend .px-0;
+  background-color: var(--wood-dark) !important;
+  color: var(--paper) !important;
+  border: 1px solid var(--accent) !important;
+  
+  h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif !important;
+    color: var(--paper) !important;
+    font-weight: 600;
+  }
+  
+  &:hover, &:focus {
+    background-color: var(--wood-bg) !important;
+    color: var(--brass) !important;
+  }
 }
 
 .collapsible-body {
   @extend .p-0;
+  background-color: var(--wood-bg) !important;
+  border: 1px solid var(--accent) !important;
+  border-top: none;
 }

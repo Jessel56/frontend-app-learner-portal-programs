@@ -16,7 +16,7 @@ $white: #fff;
   display: inline-flex;
   line-height: 3rem;
   background: transparent;
-  vertical-align: middle;
+  vertical-align: middle;  
   text-align: center;
   border: none;
   height: 3rem;
@@ -25,7 +25,7 @@ $white: #fff;
   justify-content: center;
   align-items:center;
   &:hover, &:focus {
-    background: rgba(0,0,0,.1);
+    background: rgba(191, 167, 90, 0.1); // Use brass color for hover with transparency
   }
 }
 
@@ -37,10 +37,16 @@ $white: #fff;
 
 .site-header-mobile {
   height: 3rem;
+  background-color: var(--wood-dark) !important;
 
   .nav-link {
     text-decoration: none;
     cursor: pointer;
+    color: var(--paper) !important;
+    
+    &:hover {
+      color: var(--brass) !important;
+    }
   }
   img {
     height: 1.5rem;
@@ -49,10 +55,17 @@ $white: #fff;
 
 
 .site-header-desktop {
-  box-shadow: 0 1px 0 0 rgba(0,0,0,.1);
-  background: $white;
+  box-shadow: var(--shadow);
+  background: var(--wood-dark) !important;
+  border-bottom: 1px solid var(--accent) !important;
+  
   .nav-link {
     text-decoration: none;
+    color: var(--paper) !important;
+    
+    &:hover {
+      color: var(--brass) !important;
+    }
   }
   .logo {
     display: block;
@@ -73,21 +86,23 @@ $white: #fff;
       text-decoration: none;
       font-weight: 500;
       letter-spacing: .01em;
+      color: var(--paper) !important;
     }
     .nav-link:hover,
     .nav-link:focus,
     .nav-link.active,
     .expanded .nav-link {
-      background: $component-active-bg;
-      color: $component-active-color;
+      background: var(--wood-bg) !important;
+      color: var(--brass) !important;
     }
     .menu {
       position: static;
       .menu-content {
-        border-top: solid 2px $component-active-bg;
+        border-top: solid 2px var(--accent) !important;
+        background-color: var(--wood-dark) !important;
         left: 0;
         right: 0;
-        box-shadow: 0 1px 2px rgba(0,0,0,.25);
+        box-shadow: var(--shadow);
         border-bottom-left-radius: 2px;
         border-bottom-right-radius: 2px;
         padding: 1rem;
@@ -96,5 +111,8 @@ $white: #fff;
   }
   .search-input {
     border-radius: $rounded-pill;
+    background-color: var(--paper) !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--accent) !important;
   }
 }

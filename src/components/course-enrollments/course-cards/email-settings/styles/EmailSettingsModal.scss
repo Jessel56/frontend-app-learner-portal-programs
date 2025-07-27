@@ -3,30 +3,50 @@
 @import "@edx/brand/paragon/overrides";
 
 .modal {
-  .modal-title {
-    font-size: 1.5rem;
-    line-height: 1.5;
+  .modal-content {
+    background-color: var(--paper) !important;
+    color: var(--ink) !important;
+    border: 1px solid var(--accent) !important;
+    box-shadow: var(--shadow) !important;
   }
-
-  .save-email-settings-btn {
-    &:not(.is-form-changed):disabled {
-      @extend .btn-light;
-    }
-  }
-
+  
   .modal-header {
+    background-color: var(--wood-dark) !important;
+    color: var(--paper) !important;
+    border-bottom: 1px solid var(--accent) !important;
+    
     .js-close-modal-on-click {
       &:focus, &:active {
-        outline: 5px auto -webkit-focus-ring-color;
+        outline: 5px auto var(--brass);
       }
     }
   }
 
+  .modal-title {
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-family: 'Cormorant Garamond', serif !important;
+    color: var(--paper) !important;
+    font-weight: 600;
+  }
+
+  .save-email-settings-btn {
+    &:not(.is-form-changed):disabled {
+      background-color: var(--wood-dark) !important;
+      color: var(--paper) !important;
+      border-color: var(--accent) !important;
+    }
+  }
+
   .modal-footer {
+    background-color: var(--wood-dark) !important;
+    border-top: 1px solid var(--accent) !important;
+    
     .js-close-modal-on-click {
       @extend .btn-link;
       @extend .border-0;
-      background: $white;
+      background: transparent !important;
+      color: var(--brass) !important;
 
       &::before {
         @extend .d-none;
@@ -34,7 +54,12 @@
 
       &.btn-secondary:active {
         @extend .btn-link;
-        background: $white;
+        background: transparent !important;
+        color: var(--accent) !important;
+      }
+      
+      &:hover {
+        color: var(--accent) !important;
       }
     }
   }

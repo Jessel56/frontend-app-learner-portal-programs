@@ -1,6 +1,12 @@
 .loading-spinner {
   animation: visibilityAnimation 0s 100ms forwards;
   visibility: hidden;
+  color: var(--brass) !important;
+  
+  .spinner-border {
+    color: var(--brass) !important;
+    border-color: var(--brass) transparent var(--brass) transparent !important;
+  }
 }
 
 @keyframes visibilityAnimation {

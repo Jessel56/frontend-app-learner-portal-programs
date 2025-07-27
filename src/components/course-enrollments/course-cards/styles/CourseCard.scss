@@ -4,6 +4,13 @@
 
 .course {
   @extend .position-relative;
+  background-color: var(--paper) !important;
+  border: 1px solid var(--accent) !important;
+  box-shadow: var(--shadow) !important;
+  color: var(--ink) !important;
+  padding: 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
 
   &:first-child {
     @extend .pt-3;
@@ -38,11 +45,19 @@
     }
   }
 
-  .course-title > a {
-    @extend .h4;
-    @extend .m-0;
-    @extend .text-dark;
-    text-decoration: none;
+  .course-title {
+    > a {
+      @extend .h4;
+      @extend .m-0;
+      text-decoration: none;
+      color: var(--ink) !important;
+      font-family: 'Cormorant Garamond', serif !important;
+      font-weight: 600;
+      
+      &:hover {
+        color: var(--accent) !important;
+      }
+    }
   }
 
   .notifications {
@@ -53,13 +68,22 @@
     }
 
     .notification {
-      background: #f4f7ff;
-      border-color: #d3daf0;
+      background: var(--wood-dark) !important;
+      border-color: var(--accent) !important;
+      color: var(--paper) !important;
     }
   }
 
   .btn-outline-primary {
-    background-color: $white;
+    background-color: transparent !important;
+    border-color: var(--brass) !important;
+    color: var(--brass) !important;
+    
+    &:hover, &:focus, &:active {
+      background-color: var(--brass) !important;
+      border-color: var(--brass) !important;
+      color: var(--ink) !important;
+    }
   }
 
   @include media-breakpoint-down(xs) {
@@ -69,8 +93,11 @@
   }
 
   .course-misc-text {
+    color: var(--ink) !important;
+    
     small { 
       display: block;
+      color: var(--ink) !important;
     }
   }
 }
