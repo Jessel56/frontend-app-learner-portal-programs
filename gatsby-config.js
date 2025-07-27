@@ -85,6 +85,7 @@ module.exports = {
         fonts: [
           'Inter:400,500,700',
           'Roboto Mono',
+          'Cormorant Garamond:400,500,600,700',
         ],
         display: 'swap',
       },

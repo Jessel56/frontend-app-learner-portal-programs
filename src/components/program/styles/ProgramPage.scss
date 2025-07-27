@@ -5,12 +5,34 @@
 // temporary override
 div.menu button.menu-trigger {
   @extend .btn-outline-primary;
+  background-color: var(--brass) !important;
+  border-color: var(--brass) !important;
+  color: var(--ink) !important;
+  
+  &.hover, &:focus, &:active {
+    background-color: var(--accent) !important;
+    border-color: var(--accent) !important;
+    color: var(--paper) !important;
+  }
 }
 
 .course-section {
   @extend .mb-5;
+  background-color: var(--paper) !important;
+  border: 1px solid var(--accent) !important;
+  box-shadow: var(--shadow) !important;
+  color: var(--ink) !important;
+  padding: 1rem;
+  border-radius: 4px;
 
   &:last-child {
     @extend .mb-0;
+  }
+  
+  // Update section titles
+  h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif !important;
+    color: var(--ink) !important;
+    font-weight: 600;
   }
 }

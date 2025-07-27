@@ -6,3 +6,134 @@ $fa-font-path: "~font-awesome/fonts";
 @import "~font-awesome/scss/font-awesome";
 
 @import "~@edx/frontend-component-footer-edx/dist/footer";
+
+// Dark Wood & Brass Library Theme - CSS Custom Properties
+:root {
+  --wood-bg: #20160e;
+  --paper: #f4ecd8;
+  --brass: #bfa75a;
+  --wood-dark: #36281b;
+  --ink: #32261a;
+  --accent: #7f5c27;
+  --shadow: 0 2px 8px rgba(54, 40, 27, 0.18);
+  
+  // Override key Paragon variables with our theme
+  --pgn-color-primary: var(--brass);
+  --pgn-color-primary-hover: var(--accent);
+  --pgn-color-background: var(--wood-bg);
+  --pgn-color-text: var(--paper);
+  --pgn-color-text-primary: var(--paper);
+  --pgn-color-surface: var(--wood-dark);
+  --pgn-color-border: var(--accent);
+  --pgn-color-grayscale-cool-light: var(--wood-dark);
+}
+
+// Apply global background and text colors
+body {
+  background-color: var(--wood-bg) !important;
+  color: var(--paper) !important;
+}
+
+// Global heading font family
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: 'Cormorant Garamond', serif !important;
+  color: var(--paper) !important;
+}
+
+// BRASS & WOOD LIBRARY THEME: Apply brass and wood colors to interactive elements
+
+// Buttons
+.btn, .pgn__button {
+  // Exclude buttons that typically have their own semantic colors (danger, warning, success, info)
+  // Also exclude known non-themed buttons like 'close' or icon buttons if they exist and shouldn't be brass.
+  &:not(.btn-danger):not(.pgn__button--danger):not(.btn-warning):not(.pgn__button--warning):not(.btn-success):not(.pgn__button--success):not(.btn-info):not(.pgn__button--info):not(.close):not([class*="btn-icon"]) {
+    background-color: var(--brass) !important;
+    border-color: var(--brass) !important;
+    color: var(--ink) !important;
+    box-shadow: var(--shadow) !important;
+
+    &:hover, &:focus, &:active {
+      background-color: var(--accent) !important;
+      border-color: var(--accent) !important;
+      color: var(--paper) !important;
+    }
+
+    // For link-styled buttons that should also be brass text
+    &.btn-link, &.pgn__button--link {
+      background-color: transparent !important;
+      border-color: transparent !important;
+      color: var(--brass) !important;
+      box-shadow: none !important;
+
+      &:hover, &:focus, &:active {
+        background-color: transparent !important;
+        border-color: transparent !important;
+        color: var(--accent) !important;
+        text-decoration: underline !important;
+      }
+    }
+  }
+
+  // Ensure primary buttons are explicitly styled if they were missed by the general rule,
+  // or to override any more specific default styles.
+  &.btn-primary, &.pgn__button--primary {
+    background-color: var(--brass) !important;
+    border-color: var(--brass) !important;
+    color: var(--ink) !important;
+    box-shadow: var(--shadow) !important;
+
+    &:hover, &:focus, &:active {
+      background-color: var(--accent) !important;
+      border-color: var(--accent) !important;
+      color: var(--paper) !important;
+    }
+  }
+}
+
+// Tabs
+.nav-tabs {
+  background-color: var(--wood-dark) !important;
+  border-bottom: 1px solid var(--accent) !important;
+  
+  .nav-link {
+    color: var(--paper) !important;
+    border: 1px solid transparent !important;
+    
+    &.active, &.show {
+      color: var(--brass) !important;
+      background-color: var(--wood-bg) !important;
+      border-color: var(--accent) var(--accent) var(--wood-bg) !important;
+    }
+    
+    &:hover {
+      color: var(--brass) !important;
+      border-color: var(--accent) var(--accent) transparent !important;
+    }
+  }
+}
+
+// Links
+a {
+  color: var(--brass) !important;
+  &:hover {
+    color: var(--accent) !important;
+  }
+}
+
+// Theme sidebar widgets with dark wood background
+.sidebar-column {
+  .pgn__card {
+    background-color: var(--wood-dark) !important;
+    border: 1px solid var(--accent) !important;
+    box-shadow: var(--shadow) !important;
+    color: var(--paper) !important;
+  }
+
+  // If widgets are not using .pgn__card but a generic .card
+  .card {
+    background-color: var(--wood-dark) !important;
+    border: 1px solid var(--accent) !important;
+    box-shadow: var(--shadow) !important;
+    color: var(--paper) !important;
+  }
+}
